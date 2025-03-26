@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: white;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  height: 100vh;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="white" stroke-width="1"/></svg>'), auto;
+}
+
+/* Scrollbar transparente */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Suporte para Firefox */
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+    scrollbar-width: thin;
+  }
+}
+
+/* Partículas cósmicas */
+.cosmic-particle {
+  position: absolute;
+  color: rgba(80, 80, 80, 0.15);
+  font-size: 24px;
+  user-select: none;
+  animation: float 25s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { 
+    transform: translateY(100vh) translateX(calc(-50% + 100px)) rotate(0deg);
+    opacity: 0; 
+  }
+  10% { opacity: 0.2; }
+  90% { opacity: 0.2; }
+  100% { 
+    transform: translateY(-100px) translateX(calc(50% - 100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.text-shadow {
+  text-shadow: 0 0 8px black;
+}
